@@ -2,6 +2,8 @@
 
 Managing services.
 
+[![Build Status](https://travis-ci.org/Caseraw/ansible_role_servicemanager.svg?branch=master)](https://travis-ci.org/Caseraw/ansible_role_servicemanager) [<img src="https://img.shields.io/ansible/role/49806">](https://galaxy.ansible.com/caseraw/ansible_role_servicemanager) [<img src="https://img.shields.io/ansible/role/d/49806">](https://galaxy.ansible.com/caseraw/ansible_role_servicemanager) [<img src="https://img.shields.io/ansible/quality/49806">](https://galaxy.ansible.com/caseraw/ansible_role_servicemanager)
+
 - [Ansible role service manager](#ansible-role-service-manager)
   - [License](#license)
   - [Author Information](#author-information)
