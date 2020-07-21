@@ -1,0 +1,26 @@
+---
+- name: Ensure required packages are installed
+  package:
+    name: '{{ item.packages }}'
+    state: present
+  loop: '{{ role_servicemanager_service_list }}'
+  when:
+    - item.state == 'present'
+    - item.packages | length > 0
+
+- name: Manage services
+  systemd:
+    daemon_reexec: '{{ item.systemd_daemon_reexec | default(omit) }}'
+    daemon_reload: '{{ item.systemd_daemon_reload | default(omit) }}'
+    enabled: '{{ item.service_enabled }}'
+    force: '{{ item.systemd_force | default(omit) }}'
+    masked: '{{ item.service_masked | default(omit) }}'
+    name: '{{ item.service_name }}'
+    no_block: '{{ item.systemd_no_block | default(omit) }}'
+    scope: '{{ item.systemd_scope | default(omit) }}'
+    state: '{{ item.service_state }}'
+  loop: '{{ role_servicemanager_service_list }}'
+  when:
+    - item.state == 'present'
+
+...

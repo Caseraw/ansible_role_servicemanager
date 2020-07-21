@@ -1,0 +1,33 @@
+---
+### Service list definition
+## A list of services to manage.
+##
+## The following child parameters are required:
+## - state => Whether to manage the service; options: [present, absent].
+## - service_name => The name of the systemd service.
+## - service_state => Which state to put the service in.
+## - service_enabled => Whether to enable or disable the service.
+##
+## The following child parameters are optional:
+## - service_masked => Whether to mask or unmask the service.
+## - systemd_daemon_reexec => Whether to serialize systemd state.
+## - systemd_daemon_reload => Whether to reload systemd daemon.
+## - systemd_force => Whether to force override existing symlinks.
+## - systemd_no_block => Whether to enqueue job asynchronously.
+## - systemd_scope => Whether to run systemctl within a given scope.
+## - packages => A list of packages to install for the service.
+
+role_servicemanager_service_list: []
+
+### Example list
+# role_servicemanager_service_list:
+#   - name: Process accounting
+#     state: present
+#     service_name: psacct
+#     service_state: started
+#     service_enabled: True
+#     service_masked: False
+#     packages:
+#       - psacct
+
+...
